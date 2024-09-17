@@ -1,0 +1,45 @@
+Hey, everyone this is your boy Disu. Throughout my networking studies I have had trouble with connecting LANs across different networks.
+All of this is done on Packet Tracer.
+
+This lab will be using:
+PCs - 6
+Switches - 4
+Router - 1
+
+In this lab I have decided to use to different topologies to represent the two different LANs: Star Topology & Bus Topology.
+
+First LAN one:
+Pick three PCs from the 'end device' section of packet tracer and one switch.
+Place them all in the "star Topology" format: 3 pcs coming downward with one switch in front.
+With this step you can either choose the cable or the automatic connection choice, but for the sake of learning we will pick the cables.
+Connect PC 1 to Fa/0 and connect it to the switch. All of the rest of the PCs will automatically connect to the proper ports but for learning sake:
+PC 1 will connect to fa0/1 PC 2 will connect to fa0/2 and PC 2 will connect to fa0/3, respectfully.
+Now configure each PC with their own IP address and set a defealt gateway IP. You can set your own but heres my table:
+PC 1 - 192.168.1.10 subnet: 255.255.255.0
+PC 2 - 192.168.1.11 subnet: 255.255.255.0
+PC 3 - 192.168.1.12 subnet: 255.255.255.0
+defealt gateway: 192.168.1.13
+
+side benefit: the first three numbers in the IP address makes up the network and the last number is the 'host'
+the host has to be different or the network device won't connect.
+
+Ping each PC to test connection within the LAN before moving on to make sure they all are successful.
+
+For now skip the router we wil return to it after creating the second LAN.
+Add the remaining four switches and place the last three PCs under each one to create the "bus" topology.
+Connect each switch with the copper cross over cable then repeat the steps you did in the first LAN.
+This time the IP addresses will be different
+PC 1 - 13.12.11.1 subnet: 255.255.255.0
+PC 2 - 13.12.11.2 subnet: 255.255.255.0
+PC 3 - 13.12.11.3 subnet: 255.255.255.0
+defealt gateway: 13.12.11.4
+
+ping within the LAN to confirm connection
+
+Next place your router between both networks and use a copper cable to connect both switch one of LAN 1 with the router and switch two of LAN 2.
+Next give the fa0/1 the IPv4 address 192.168.1.13 same as the defealt gateway of LAN 1 and fa0/2 the IPv4 address 13.12.11.4 the same as the defealt gateway for LAN 2.
+
+Ping all the PCs from each PC. Sometime it takes a second for Packet tracer to catch up but all should be connected. 
+You should now be able to send an email between both LANs.
+
+Hope this helps!
